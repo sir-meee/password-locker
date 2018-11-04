@@ -17,5 +17,11 @@ from user import User
         test_init test case to test if the object is initialized properly
         """
         self.assertEqual(self.new_user.username,"Sammy")
+        def test_save_user(self):
+        """
+        test to check if the user object is saved on user list
+        """
+        self.new_user.save_user() #save user
+        self.assertEqual(len(User.user_list),1)
  if __name__ == '__main__':
     unittest.main() 
