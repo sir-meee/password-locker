@@ -1,3 +1,6 @@
+import string
+from random import choice
+
 class User:
     """
     Class that generates new instances of users.
@@ -56,4 +59,9 @@ class Credentials:
         delete_credentials method deletes a saved credentials from the credentials_list
         '''
         Credentials.credentials_list.remove(self)
-     
+    def gen_password(self):
+        """
+        gen_password method that generates random passwords
+        """
+        alphabet = string.ascii_letters + string.digits
+        password = ''.join(choice(alphabet) for i in range(8))
