@@ -78,7 +78,7 @@ class TestCredentials(unittest.TestCase):
         To check if we can save multiple objects into list
         """
         self.new_credentials.save_credentials()
-        test_credentials = Credentials ("Twitter","khaleesifan","24hugugugu")
+        test_credentials = Credentials ("Twitter","samm","24hugugugu")
         test_credentials.save_credentials()
         self.assertEqual(len(Credentials.credentials_list),2)
   def test_delete_credentials(self):
@@ -86,10 +86,18 @@ class TestCredentials(unittest.TestCase):
             test_delete_contact to test if we can remove credentials from our credentials list
             '''
             self.new_credentials.save_credentials()
-            test_credentials = Credentials ("Twitter","khaleesifan","24hugugugu") # new credentials
+            test_credentials = Credentials ("Twitter","samm","24hugugugu") # new credentials
             test_credentials.save_credentials()
              self.new_credentials.delete_credentials()# Deleting a credentials object
             self.assertEqual(len(Credentials.credentials_list),1)
-
+def test_find_credentials_by_acc_name(self):
+        '''
+        test to check if we can find a credential by account name and display information
+        '''
+         self.new_credentials.save_credentials()
+        test_credentials = Credentials ("Twitter","samm","24hugugugu") # new credentials
+        test_credentials.save_credentials()
+         found_credentials = Credentials.find_by_acc_name("Twitter")
+         self.assertEqual(found_credentials.pword,test_credentials.pword)
  if __name__ == '__main__':
     unittest.main() 
