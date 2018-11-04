@@ -1,5 +1,5 @@
 import unittest 
-from user import User
+from user import User, Credentials
  class TestUser(unittest.TestCase):
      """
     Test class that defines test cases for the contact class behaviours
@@ -45,5 +45,22 @@ from user import User
         test_user.save_user()
          user_exists = User.user_exist("Test")
          self.assertTrue(user_exists)
+class TestCredentials(unittest.TestCase):
+    """
+    Test class that defines test cases for the contact class behaviours
+     Args:
+        unittest.TestCase: TestCase class that helps in creating test cases
+     """
+    def setUp(self):
+        """
+        Set up method to run before each test case.
+        """
+        self.new_credentials = Credentials ("Reddit","sir-me","23iiihihs") #create user object
+     def test_init(self):
+        """
+        test_init test case to test if the object is initialized properly
+        """
+        self.assertEqual(self.new_credentials.acc_name,"Reddit")
+
  if __name__ == '__main__':
     unittest.main() 
