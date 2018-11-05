@@ -17,18 +17,18 @@ from user import User, Credentials
         tearDown method that does the clean-up after each test has run
         """ 
         User.user_list = []
-     def test_init(self):
+    def test_init(self):
         """
         test_init test case to test if the object is initialized properly
         """
         self.assertEqual(self.new_user.username,"Sammy")
-        def test_save_user(self):
+    def test_save_user(self):
         """
         test to check if the user object is saved on user list
         """
         self.new_user.save_user() #save user
         self.assertEqual(len(User.user_list),1)
-        def test_save_multiple_user(self):
+    def test_save_multiple_user(self):
         """
         To check if we can save multiple objects into list
         """
@@ -36,7 +36,15 @@ from user import User, Credentials
         test_user = User ("Test","34huhuhuhu")
         test_user.save_user()
         self.assertEqual(len(User.user_list),2)
-          
+    def test_find_user_by_username(self):
+        '''
+        test to check if we can find a user by username and display information
+        '''
+        self.new_user.save_user()
+        test_user = User ("samm","24hugugugu") # new user
+        test_user.save_user()
+        found_user = User.find_by_username("samm")
+        self.assertEqual(found_user.password,test_user.password)      
     def test_user_exists(self):
         '''
         test to check if we can return a Boolean  if we cannot find the user.
@@ -63,12 +71,12 @@ class TestCredentials(unittest.TestCase):
         """ 
         Credentials.credentials_list = []
 
-     def test_init(self):
+    def test_init(self):
         """
         test_init test case to test if the object is initialized properly
         """
         self.assertEqual(self.new_credentials.acc_name,"Reddit")
- def test_save_credentials(self):
+    def test_save_credentials(self):
         """
         test to check if the credentials object is saved on credentials list
         """
@@ -82,7 +90,7 @@ class TestCredentials(unittest.TestCase):
         test_credentials = Credentials ("Twitter","samm","24hugugugu")
         test_credentials.save_credentials()
         self.assertEqual(len(Credentials.credentials_list),2)
-  def test_delete_credentials(self):
+    def test_delete_credentials(self):
             '''
             test_delete_contact to test if we can remove credentials from our credentials list
             '''
@@ -91,7 +99,7 @@ class TestCredentials(unittest.TestCase):
             test_credentials.save_credentials()
              self.new_credentials.delete_credentials()# Deleting a credentials object
             self.assertEqual(len(Credentials.credentials_list),1)
-def test_find_credentials_by_acc_name(self):
+    def test_find_credentials_by_acc_name(self):
         '''
         test to check if we can find a credential by account name and display information
         '''
@@ -100,7 +108,7 @@ def test_find_credentials_by_acc_name(self):
         test_credentials.save_credentials()
         found_credentials = Credentials.find_by_acc_name("Twitter")
         self.assertEqual(found_credentials.pword,test_credentials.pword)
-  def test_credentials_exists(self):
+    def test_credentials_exists(self):
         '''
         test to check if we can return a Boolean  if we cannot find the credentials.
         '''
@@ -109,16 +117,16 @@ def test_find_credentials_by_acc_name(self):
         test_credentials.save_credentials()
         credentials_exists = Credentials.credentials_exist("Twitter")
         self.assertTrue(credentials_exists)
-  def test_display_all_credentials(self):
+    def test_display_all_credentials(self):
         '''
         method that returns a list of all credentialss saved
         '''
          self.assertEqual(Credentials.display_credentials(),Credentials.credentials_list)
-# def test_copy_login_name(self):
+   #def test_copy_login_name(self):
     #     '''
     #     Test to confirm that we are copying the login name from a found credential
     #     '''
-     #     self.new_credentials.save_credentials()
+    #     self.new_credentials.save_credentials()
     #     Credentials.copy_login_name("Twitter")
     #     self.assertEqual(self.new_credentials.login_name,pyperclip.paste())
  if __name__ == '__main__':
