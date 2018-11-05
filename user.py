@@ -1,5 +1,5 @@
 import string
-# import pyperclip
+import pyperclip
 from random import choice
 
 class User:
