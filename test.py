@@ -1,4 +1,5 @@
-import unittest 
+import unittest
+# import pyperclip 
 from user import User, Credentials
  class TestUser(unittest.TestCase):
      """
@@ -113,6 +114,12 @@ def test_find_credentials_by_acc_name(self):
         method that returns a list of all credentialss saved
         '''
          self.assertEqual(Credentials.display_credentials(),Credentials.credentials_list)
-
+# def test_copy_login_name(self):
+    #     '''
+    #     Test to confirm that we are copying the login name from a found credential
+    #     '''
+     #     self.new_credentials.save_credentials()
+    #     Credentials.copy_login_name("Twitter")
+    #     self.assertEqual(self.new_credentials.login_name,pyperclip.paste())
  if __name__ == '__main__':
     unittest.main() 
