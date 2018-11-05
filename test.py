@@ -13,7 +13,7 @@ class TestUser(unittest.TestCase):
         """
         Set up method to run before each test case.
         """
-        self.new_user = User ("Ozzie","21ozwellyeah") #create user object
+        self.new_user = User ("sir-me","21ozwellyeah") #create user object
 
 
     def tearDown(self):
@@ -27,7 +27,7 @@ class TestUser(unittest.TestCase):
         """
         test_init test case to test if the object is initialized properly
         """
-        self.assertEqual(self.new_user.username,"Ozzie")
+        self.assertEqual(self.new_user.username,"sir-me")
 
     def test_save_user(self):
         """
@@ -82,7 +82,7 @@ class TestCredential(unittest.TestCase):
         """
         Set up method to run before each test case.
         """
-        self.new_credential = Credential ("Reddit","ozzyman","23iiihihs") #create user object
+        self.new_credential = Credential ("Reddit","sammyboy","23iiihihs") #create user object
 
     def tearDown(self):
         """
