@@ -21,6 +21,18 @@ class User:
         save_user method saves objects into list
         """
         User.user_list.append(self)
+      @classmethod
+    def find_by_username(cls,username):
+        '''
+        Method that takes in a username and returns a user that matched that username.
+        Args:
+            username: username to search for
+        Returns:
+             Credentials of person that matched the username.
+        '''
+         for user in cls.user_list:
+            if user.username == username:
+                return user
         @classmethod
     def user_exist(cls,username):
         '''
