@@ -16,3 +16,19 @@ def create_user(username,password):
     Function that check if a user exists with that username and return a Boolean
     '''
     return User.user_exist(surname)
+    def create_credentials(acc_name,login_name,pword):
+    '''
+    Function to create a new credential
+    '''
+    new_credentials = Credentials (acc_name,login_name,pword)
+    return new_credentials
+ def save_credentialss(credentials):
+    '''
+    Function to save credentials
+    '''
+    credentials.save_credentials()
+ def del_credentials(credentials):
+    '''
+    Function to delete a credential
+    '''
+    credentials.delete_credentials()
