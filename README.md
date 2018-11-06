@@ -8,16 +8,16 @@ Once you log in, you have an option to create a credential, generate a random pa
 To access this application, follow the following steps:
 1) On the repository address, click the Clone or download button
 2) Using the terminal git clone the given address
-3) Once cloned, route yourself to the file using the terminal
-4) Then run on the terminal: "./run.py"
+3) Once cloned, navigate to the file using the terminal
+4) Then run on the terminal using: "python3.6 run.py"
 
 ### Prerequisites
 
-You need to have installed python3.6 and using pip, install pyperclip
+You need to have installed python3.6 and using pip, install pyperclip using (sudo)pip install pyperclip
 
 ### Known bugs
 
-
+The credential function has issues.
 
 ### Technologies used
 
